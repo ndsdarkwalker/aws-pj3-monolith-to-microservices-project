@@ -19,13 +19,13 @@ script:
   - docker build -t udagram-frontend ./udagram-frontend
   - docker build -t reverseproxy ./udagram-reverseproxy
   #tagging
-  - docker tag udagram-api-feed vladhoang/udagram-api-feed:v9
-  - docker tag udagram-api-user vladhoang/udagram-api-user:v9
-  - docker tag udagram-frontend vladhoang/udagram-frontend:v9
-  - docker tag reverseproxy vladhoang/reverseproxy:v5
+  - docker tag udagram-api-feed vladhoang/udagram-api-feed:v10
+  - docker tag udagram-api-user vladhoang/udagram-api-user:v10
+  - docker tag udagram-frontend vladhoang/udagram-frontend:v10
+  - docker tag reverseproxy vladhoang/reverseproxy:v10
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push vladhoang/udagram-api-feed:v5
-  - docker push vladhoang/udagram-api-user:v5
-  - docker push vladhoang/udagram-frontend:v5
-  - docker push vladhoang/reverseproxy:v5
+  - docker push vladhoang/udagram-api-feed:v10
+  - docker push vladhoang/udagram-api-user:v10
+  - docker push vladhoang/udagram-frontend:v10
+  - docker push vladhoang/reverseproxy:v10
